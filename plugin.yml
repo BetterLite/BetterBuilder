@@ -1,0 +1,154 @@
+name: BetterBuilder
+api: [5.0.0]
+author: BetterLite Team
+authors: [BetterLite Team]
+version: 1.5.0
+main: betterlite\betterbuilder\BetterBuilder
+website: https://github.com/CzechPMDevs/BuilderTools
+description: A powerful World Editor plugin for PocketMine servers
+
+extensions:
+  Core: '>=8.1'
+
+permissions:
+  buildertools.command:
+    default: op
+    description: Permissions for all BuilderTools commands
+  buildertools.command.biome:
+    description: Permissions for //blockinfo
+    default: op
+  buildertools.command.blockinfo:
+    description: Permissions for //blockinfo
+    default: op
+  buildertools.command.center:
+    description: Permissions for //center
+    default: op
+  buildertools.command.chunk:
+    description: Permissions for //chunk
+    default: op
+  buildertools.command.clearclipboard:
+    description: Permissions for //clearclipboard
+    default: op
+  buildertools.command.clearinventory:
+    description: Permissions for //clearinventory
+    default: op
+  buildertools.command.copy:
+    description: Permissions for //copy
+    default: op
+  buildertools.command.cube:
+    description: Permissions for //cube
+    default: op
+  buildertools.command.cut:
+    description: Permissions for //cut
+    default: op
+  buildertools.command.cylinder:
+    description: Permissions for //cylinder
+    default: op
+  buildertools.command.decoration:
+    description: Permissions for //decoration
+    default: op
+  buildertools.command.drain:
+    description: Permissions for //drain
+    default: op
+  buildertools.command.draw:
+    description: Permission for //draw
+    default: op
+  buildertools.command.fill:
+    description: Permissions for //fill
+    default: op
+  buildertools.command.pos1:
+    description: Permissions for //pos1
+    default: op
+  buildertools.command.hpos1:
+    description: Permissions for //hpos1
+    default: op
+  buildertools.command.fix:
+    description: Permissions for //fix
+    default: op
+  buildertools.command.flip:
+    description: Permissions for //flip
+    default: op
+  buildertools.command.help:
+    description: Permissions for //commands
+    default: op
+  buildertools.command.hcube:
+    description: Permissions for //hcube
+    default: op
+  buildertools.command.hcylinder:
+    description: Permissions for //hcylinder
+    default: op
+  buildertools.command.hpyramid:
+    description: Permissions for //hpyramid
+    default: op
+  buildertools.command.hsphere:
+    description: Permissions for //hsphere
+    default: op
+  buildertools.command.id:
+    description: Permissions for //id
+    default: op
+  buildertools.command.island:
+    description: Permissions for //island
+    default: op
+  buildertools.command.line:
+    description: Permissions for //line
+    default: op
+  buildertools.command.mask:
+    description: Permissions for //mask
+    default: op
+  buildertools.command.merge:
+    description: Permissions for //merge
+    default: op
+  buildertools.command.move:
+    description: Permissions for //move
+    default: op
+  buildertools.command.naturalize:
+    description: Permissions for //naturalize
+    default: op
+  buildertools.command.outline:
+    description: Permissions for //outline
+    default: op
+  buildertools.command.paste:
+    description: Permissions for //paste
+    default: op
+  buildertools.command.pyramid:
+    description: Permissions for //pyramid
+    default: op
+  buildertools.command.redo:
+    description: Permissions for //redo
+    default: op
+  buildertools.command.replace:
+    description: Permissions for //replace
+    default: op
+  buildertools.command.rotate:
+    description: Permission for //rotate
+    default: op
+  buildertools.command.schematic:
+    description: Permissions for //schematics
+    default: op
+  buildertools.command.pos2:
+    description: Permissions for //pos2
+    default: op
+  buildertools.command.hpos2:
+    description: Permissions for //hpos2
+    default: op
+  buildertools.command.selection:
+    description: Permissions for //sel
+    default: op
+  buildertools.command.sphere:
+    description: Permissions for //sphere
+    default: op
+  buildertools.command.stack:
+    description: Permissions for //stack
+    default: op
+  buildertools.command.tree:
+    description: Permissions for //tree
+    default: op
+  buildertools.command.undo:
+    description: Permissions for //undo
+    default: op
+  buildertools.command.walls:
+    description: Permissions for //walls
+    default: op
+  buildertools.command.wand:
+    description: Permissions for //wand
+    default: op

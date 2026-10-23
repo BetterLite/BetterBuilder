@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * Copyright (C) 2018-2022  CzechPMDevs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+declare(strict_types=1);
+
+namespace betterlite\betterbuilder\async\schematics;
+
+use betterlite\betterbuilder\async\BuilderToolsAsyncTask;
+use betterlite\betterbuilder\blockstorage\BlockArray;
+use betterlite\betterbuilder\schematics\format\Schematic;
+use betterlite\betterbuilder\schematics\SchematicException;
+use pocketmine\utils\AssumptionFailedError;
+use function file_put_contents;
+use function serialize;
+use function unserialize;
+
+class SchematicCreateTask extends BuilderToolsAsyncTask {
+
+	public string $targetFilePath;
+	/** @var class-string<Schematic> */
+	public string $format;
+
+	public string $blockArray;
+
+	public ?string $error = null;
+
+	/**
+	 * @param class-string<Schematic> $format
+	 */
+	public function __construct(string $targetFilePath, string $format, BlockArray $blockArray) {
+		parent::__construct();
+
+		$this->targetFilePath = $targetFilePath;
+		$this->format = $format;
+		$this->blockArray = serialize($blockArray);
+	}
+
+	public function execute(): void {
+		$blockArray = unserialize($this->blockArray);
+		if(!$blockArray instanceof BlockArray) {
+			throw new AssumptionFailedError("Error whilst creating schematics: Could not deserialize block array properly.");
+		}
+
+		try {
+			$schematic = new $this->format;
+			$rawData = $schematic->save($blockArray);
+		} catch(SchematicException $exception) {
+			$this->error = $exception->getMessage();
+			return;
+		}
+
+		file_put_contents($this->targetFilePath, $rawData);
+	}
+}

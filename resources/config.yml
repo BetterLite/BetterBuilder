@@ -1,0 +1,50 @@
+---
+# BuilderTools configuration file
+# Target BuilderTools version: 1.5.0
+
+# Do not change this line.
+config-version: 1.5.0
+
+# This is format which will be used for creating schematics
+# Supported formats: 'mcedit', 'buildertools'
+output-schematics-format: 'mcedit'
+
+# Some shapes are generated with duplicate blocks. This problem causes
+# some blocks are not reverted right when doing //undo. This option
+# is for removing duplicates.
+# Warning: This action takes around 98% time of the whole process!
+remove-duplicate-blocks: true
+
+# BuilderTools saves player's clipboard, undo & redo stuff when player
+# leaves server to disk. This cache should be cleaned after restart (to
+# avoid unexpected bugs). This  option is to disable removing those files.
+clean-cache: true
+
+# When player leaves the server, player's session is saved, even if player did not
+# do any action with BuilderTools. If you enable this, player's sessions will not
+# be saved and when player joins the server again, his clipboard data will be lost
+# This option is good when BuilderTools is only used as api plugin on server with
+# high amount of players.
+discard-sessions: false
+
+# Max trace distance is used in commands such as //hpos1, //hpos2 or //draw.
+# BuilderTools is looking for some block in player's direction until some block is
+# found, or this distance is reached
+max-ray-trace-distance: 128
+
+# These limits point count of 2D polygon, since each point makes the action more
+# expensive in terms of process speed.
+poly-points-limit: 16
+
+# Maximum limit for blocks copied to clipboard (//copy, //cut)
+# Set to -1 to disable the limit
+clipboard-limit: 250000
+
+# Maximum limit of blocks filled. This does not apply to shapes (//cube, sphere, ...)
+# Set to -1 to disable the limit
+fill-limit: 1000000
+
+# There is possible to change wand items names:
+wand-axe-name: "§r§fWand Axe\n§7§oBreak for first pos\n§7§oTouch for second pos"
+blockinfo-stick-name: "§r§fDebug Stick\n§7§oTouch block for info"
+...
