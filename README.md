@@ -1,5 +1,4 @@
-<p align="center"><img src="https://i.ibb.co/ckmrTb0/bt.png"></p>  
-  
+
 <h1 align="center">BetterBuilder</h1>
 <h3 align="center">⚠️ This project is a FORK of <a href="https://github.com/CzechPMDevs/BuilderTools">BuilderTools</a> maintained and updated by the <b>BetterLite</b> team for PocketMine-MP API 5.0.0!</h3>
 
